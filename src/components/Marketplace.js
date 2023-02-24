@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 import NFTTile from "./NFTTile";
 import MarketplaceJSON from "../Marketplace.json";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Marketplace() {
 const sampleData = [
@@ -70,9 +70,10 @@ async function getAllNFTs() {
     updateData(items);
 }
 
+useEffect(() => {
 if(!dataFetched)
     getAllNFTs();
-
+});
 return (
     <div>
         <Navbar></Navbar>

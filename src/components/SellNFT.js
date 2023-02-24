@@ -75,7 +75,8 @@ export default function SellNFT () {
             let transaction = await contract.createToken(metadataURL, price, { value: listingPrice })
             await transaction.wait()
 
-            alert("Successfully listed your NFT!");
+            //update the UI
+            
             updateMessage("");
             updateFormParams({ name: '', description: '', price: ''});
             window.location.replace("/")

@@ -60,7 +60,7 @@ export default function Profile () {
     useEffect(() => {
     if(!dataFetched)
         getNFTData(tokenId);
-    }, []);
+    }, [dataFetched, tokenId]);
     return (
         <div className="profileClass" style={{"min-height":"100vh"}}>
             <Navbar></Navbar>
